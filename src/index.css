@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@layer components {
+  .btn {
+    @apply border border-black w-[60px] grid place-items-center bg-white hover:cursor-pointer;
+  }
+}

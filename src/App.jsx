@@ -1,9 +1,7 @@
-import { useState } from "react";
+import ExplorerCon from "./assets/File Explorer/Components/explorerCon";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <h1 className="text-7xl text-red-400">Hello World!</h1>;
+  return <ExplorerCon />;
 }
 
 export default App;
