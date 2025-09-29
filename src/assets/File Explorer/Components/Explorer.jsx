@@ -3,19 +3,34 @@ import { useState } from "react";
 function Explorer({ expData }) {
   const [explorerData, setExplorerData] = useState(expData);
   const [expand, setExpand] = useState(false);
+  console.log(explorerData);
 
   const [showInput, setShowInput] = useState({
     visible: false,
     isFolder: null,
   });
 
-  const handleInput = (e, isFolder) => {
+  // show input field
+  const handleShowInput = (isFolder) => {
     setExpand(true);
     setShowInput({ visible: true, isFolder: isFolder });
   };
 
-  const onAddData = (e) => {
-    e.code === "Enter" && setShowInput({ ...showInput, visible: false });
+  // add new folder or file
+  const onAddData = (e, items) => {
+    if (e.code === "Enter" && e.target.value) {
+      // Logic
+      const newData = {
+        id: crypto.randomUUID(),
+        name: e.target.value,
+        isFolder: showInput.isFolder,
+        items: [],
+      };
+
+      showInput.isFolder ? items.unshift(newData) : items.push(newData);
+
+      setShowInput({ ...showInput, visible: false });
+    }
   };
 
   if (explorerData.isFolder) {
@@ -29,10 +44,10 @@ function Explorer({ expData }) {
 
           {/* btns */}
           <div className="flex gap-2 text-sm">
-            <div className="btn" onClick={(e) => handleInput(e, true)}>
+            <div className="btn" onClick={() => handleShowInput(true)}>
               Folder+
             </div>
-            <div className="btn" onClick={(e) => handleInput(e, false)}>
+            <div className="btn" onClick={() => handleShowInput(false)}>
               File+
             </div>
           </div>
@@ -49,7 +64,7 @@ function Explorer({ expData }) {
                 className="border border-black"
                 autoFocus
                 onBlur={() => setShowInput({ ...showInput, visible: false })}
-                onKeyDown={(e) => onAddData(e)}
+                onKeyDown={(e) => onAddData(e, explorerData.items)}
               />
             </span>
           )}
