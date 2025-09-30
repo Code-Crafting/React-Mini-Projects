@@ -1,7 +1,8 @@
-import ExplorerCon from "./assets/File Explorer/Components/explorerCon";
+// import ExplorerCon from "./assets/File Explorer/Components/explorerCon";
+import Content from "./assets/Pagination/Components/Content";
 
 function App() {
-  return <ExplorerCon />;
+  return <Content />;
 }
 
 export default App;
