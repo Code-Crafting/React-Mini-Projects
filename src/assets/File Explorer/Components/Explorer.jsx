@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 function Explorer({ expData }) {
-  const [explorerData, setExplorerData] = useState(expData);
   const [expand, setExpand] = useState(false);
-  console.log(explorerData);
 
   const [showInput, setShowInput] = useState({
     visible: false,
@@ -33,13 +31,16 @@ function Explorer({ expData }) {
     }
   };
 
-  if (explorerData.isFolder) {
+  if (expData.isFolder) {
     return (
       <>
-        <div className="w-2xs bg-gray-300 py-1 flex justify-between items-center px-1 hover:cursor-pointer">
-          <div onClick={() => setExpand(!expand)}>
+        <div className="w-2xs bg-gray-300 py-1 flex justify-between items-center px-1">
+          <div
+            onClick={() => setExpand(!expand)}
+            className="hover:cursor-pointer"
+          >
             📁
-            {explorerData.name}
+            {expData.name}
           </div>
 
           {/* btns */}
@@ -64,12 +65,12 @@ function Explorer({ expData }) {
                 className="border border-black"
                 autoFocus
                 onBlur={() => setShowInput({ ...showInput, visible: false })}
-                onKeyDown={(e) => onAddData(e, explorerData.items)}
+                onKeyDown={(e) => onAddData(e, expData.items)}
               />
             </span>
           )}
           {/* folder data */}
-          {explorerData.items.map((el) => (
+          {expData.items.map((el) => (
             <div key={el.id} className="ml-4 mt-2">
               <Explorer expData={el} />
             </div>
@@ -81,7 +82,7 @@ function Explorer({ expData }) {
     return (
       <div>
         📃
-        {explorerData.name}
+        {expData.name}
       </div>
     );
   }
