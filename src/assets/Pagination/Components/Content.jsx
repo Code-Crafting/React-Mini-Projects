@@ -5,6 +5,8 @@ import { useChunkData } from "../Hooks/chunkData";
 function Content() {
   const [contentData, setContentData] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
+  // dividing data into small chuncks
+  const chunkData = useChunkData(contentData, 10);
 
   useEffect(() => {
     fetch("https://dummyjson.com/products?limit=100")
@@ -12,10 +14,9 @@ function Content() {
       .then((data) => setContentData(data.products));
   }, []);
 
-  const chunkData = useChunkData(contentData, 10);
-
   return (
     <div className="max-w-7xl mx-auto h-screen flex flex-col gap-4">
+      {/* pagination */}
       {chunkData.length ? (
         <Pagination
           size={chunkData.length}
@@ -26,6 +27,7 @@ function Content() {
         <></>
       )}
 
+      {/* content */}
       {chunkData.length ? (
         chunkData[currentPage].map((el) => {
           const { brand, category, description, id, title } = el;
