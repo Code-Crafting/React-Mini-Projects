@@ -1,16 +1,11 @@
-# React + Vite
+## 📂 Project Overview
+These are some of the projects I have built to strengthen my skills in front-end development and problem-solving.
+Each project demonstrates practical implementation of concepts like state management, dynamic UI updates, recursion, and scalability in web applications.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+| Project Name    | Description                                                                                                                                                                                                                 |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Folder Explorer | A project that simulates a file/folder structure where users can expand or collapse folders and create new files or folders dynamically. It strengthened my understanding of recursion and handling nested data structures. |
+| Pagination      | A project that splits large datasets into smaller, manageable chunks. Built with custom hooks to keep the component reusable and highly scalable for applications like e-commerce platforms.                                |
+| EMI Calculator  | A project that calculates monthly installments based on loan amount, interest rate, and tenure. It includes dynamic updates for down payment and EMI sliders, helping me learn how to manage complex state relationships.   |
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
