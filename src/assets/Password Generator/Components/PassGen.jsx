@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CheckBoxInput from "./CheckBoxInput";
-import usePasswordGenerator from "../Hooks/usePasswordGenerator";
+import usePasswordGenerator from "../hooks/usePasswordGenerator";
 import Button from "./Button";
 
 function PassGen({ minLength, maxLength, checkBoxData, setCheckBoxData }) {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { tenure } from "../Utils/constants";
+import { tenure } from "../constants/tenure";
 import NumberInput from "./NumberInput";
 import Slider from "./Slider";
 

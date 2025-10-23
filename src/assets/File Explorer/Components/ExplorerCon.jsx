@@ -1,4 +1,4 @@
-import { folderData } from "../FolderData/folderData";
+import { folderData } from "../constants/folderData";
 import Explorer from "./explorer";
 function ExplorerCon() {
   return (
