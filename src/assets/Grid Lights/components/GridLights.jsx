@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-import { useGridLights } from "../hooks/useGridLights";
 import Grid from "./Grid";
 
 const GridLights = () => {
   const [selectedGrid, setSelectedGrid] = useState([]);
   const [allCllicked, setAllClicked] = useState(false);
   const boardSize = [
-    [1, 1, 1],
     [1, 0, 1],
-    [1, 1, 1],
+    [0, 1, 0],
+    [1, 0, 1],
   ];
 
   useEffect(() => {
@@ -22,7 +21,7 @@ const GridLights = () => {
       const intervalId = setTimeout(() => {
         const deletedGrids = selectedGrid.slice(0, -1);
         setSelectedGrid(deletedGrids);
-      }, 500);
+      }, 1000);
 
       return () => clearTimeout(intervalId);
     }

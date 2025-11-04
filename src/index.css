@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --shadow-box: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
 @layer components {
   .btn {
     @apply border border-black w-[60px] grid place-items-center bg-white hover:cursor-pointer;
